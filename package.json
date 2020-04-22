@@ -1,0 +1,28 @@
+{
+  "name": "paimages-egress-stack",
+  "version": "0.0.1-SNAPSHOT",
+  "description": "Infrastructure to act as an ingress point for Alamy ingesting images from the PA Images stack",
+  "main": "app.js",
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+  "type": "git",
+    "url": "git+https://github.com/PressAssociation/images-alamy-ingress-stack.git"
+  },
+  "keywords": [
+    "images",
+    "alamy",
+    "sqs",
+    "ingest"
+  ],
+  "author": "Images Squad <imagessquad@pamediagroup.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PressAssociation/images-alamy-ingress-stack/issues"
+  },
+  "homepage": "https://github.com/PressAssociation/images-alamy-ingress-stack#readme",
+  "devDependencies": {
+    "@press-association/semantic-release": "^2.0.0"
+  }
+}
