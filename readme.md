@@ -1,4 +1,6 @@
-# paimages-egress-stack
+# product-log-stack
+
+Below is a copy of paimages-egress-stack, to be updated
 
 ## Notes from meeting with PA
 * Create bucket:
