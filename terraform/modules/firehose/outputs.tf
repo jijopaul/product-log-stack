@@ -1,3 +1,3 @@
-output "firehose_id" {
+output "log_stream_id" {
   value = "${aws_kinesis_firehose_delivery_stream.test_stream.id}"
 }
