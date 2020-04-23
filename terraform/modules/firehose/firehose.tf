@@ -1,26 +1,6 @@
-resource "aws_s3_bucket" "bucket" {
+resource "aws_s3_bucket" "kinesis_firehose_stream_bucket" {
   bucket = "tf-test-firehose-bucket"
   acl    = "private"
-}
-
-resource "aws_iam_role" "firehose_role" {
-  name = "firehose_test_role"
-
-  assume_role_policy = <<EOF
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Action": "sts:AssumeRole",
-      "Principal": {
-        "Service": "firehose.amazonaws.com"
-      },
-      "Effect": "Allow",
-      "Sid": ""
-    }
-  ]
-}
-EOF
 }
 
 resource "aws_kinesis_firehose_delivery_stream" "test_stream" {
@@ -28,7 +8,7 @@ resource "aws_kinesis_firehose_delivery_stream" "test_stream" {
   destination = "s3"
 
   s3_configuration {
-    role_arn   = "${aws_iam_role.firehose_role.arn}"
-    bucket_arn = "${aws_s3_bucket.bucket.arn}"
+    role_arn   = "${aws_iam_role.kinesis_firehose_stream_role.arn}"
+    bucket_arn = "${aws_s3_bucket.kinesis_firehose_stream_bucket.arn}"
   }
 }
